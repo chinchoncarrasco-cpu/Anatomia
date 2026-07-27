@@ -1,17 +1,21 @@
-# Anatomía fácil — Versión 3 completa
+# Anatomía fácil — Versión final
+
+Esta carpeta contiene la enciclopedia completa y reemplaza todas las entregas anteriores.
 
 ## Incluye
-- Todos los sistemas anteriores
-- Sistema reproductor femenino
-- Sistema tegumentario
-- Órganos de los sentidos
-- Menú unificado en todas las páginas
+- 15 sistemas y grupos anatómicos
+- Sistema inmunitario dentro del índice
+- Menú lateral desplegable y uniforme
 - Buscador
 - Modo oscuro
 - Navegación anterior/siguiente
+- Diseño adaptable a celular
 
-## Instalación
+## Cómo subir a GitHub
 1. Descomprime el ZIP.
-2. Reemplaza todos los archivos actuales del repositorio.
-3. Sube todos los archivos de esta carpeta a la raíz.
-4. Espera unos minutos y recarga GitHub Pages.
+2. Borra o reemplaza todos los archivos actuales del repositorio.
+3. Sube todos los archivos de esta carpeta directamente a la raíz.
+4. Confirma el commit.
+5. Espera unos minutos y actualiza GitHub Pages con Ctrl + F5.
+
+No subas el archivo ZIP; sube su contenido.
