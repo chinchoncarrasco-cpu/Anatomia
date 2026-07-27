@@ -1,0 +1,26 @@
+ENTREGA: SISTEMA INMUNITARIO
+
+ARCHIVOS NUEVOS
+- sistema-inmunitario.html
+- leucocitos.html
+- linfocitos.html
+- neutrofilos.html
+- macrofagos.html
+- celulas-dendriticas.html
+- anticuerpos.html
+- medula-osea-inmunitaria.html
+
+ARCHIVOS QUE DEBES REEMPLAZAR
+- app.js
+- index.html
+- creditos.html
+
+NO REEMPLACES
+- style.css
+- las demás páginas
+
+SUBIDA
+1. Descomprime el ZIP.
+2. Sube todos los archivos a la raíz del repositorio.
+3. Confirma el reemplazo de app.js, index.html y creditos.html.
+4. Espera uno o dos minutos y recarga con Ctrl + F5.
