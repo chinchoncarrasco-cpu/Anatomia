@@ -123,3 +123,41 @@ footer{text-align:center;color:var(--muted);padding:28px}
  .artery.blocked .clot{right:45px;width:52px}
  .no-flow{right:12px}
 }
+
+
+/* Diagramas de ritmo cardíaco */
+.rhythm-diagram{
+ display:grid;gap:13px;background:var(--bg);border:1px solid var(--border);
+ border-radius:14px;padding:18px
+}
+.rhythm-row{
+ display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;
+ align-items:center
+}
+.rhythm-line{
+ overflow:hidden;white-space:nowrap;font-family:Consolas,monospace;
+ font-size:1.45rem;font-weight:900;color:var(--primary);
+ letter-spacing:.08em;background:var(--surface);border:1px solid var(--border);
+ border-radius:9px;padding:10px
+}
+.fast-rhythm{color:#b42318}
+.slow-rhythm{color:#075985}
+.irregular-rhythm{color:#7a2eaa}
+@media(max-width:600px){
+ .rhythm-row{grid-template-columns:1fr;gap:5px}
+ .rhythm-line{font-size:1.15rem}
+}
+
+
+/* Diagrama de insuficiencia cardíaca */
+.heart-failure-diagram{display:grid;gap:10px;max-width:760px;margin:auto}
+.hf-box{
+ display:grid;gap:5px;padding:18px;border-radius:14px;border:1px solid var(--border)
+}
+.hf-box strong{font-size:1.08rem}
+.hf-box span{color:var(--muted)}
+.hf-box.healthy{background:var(--tip);border-left:6px solid #37a45c}
+.hf-box.strained{background:var(--note);border-left:6px solid #f3a800}
+.hf-box.congested{background:#fff1f0;border-left:6px solid #d92d20}
+[data-theme="dark"] .hf-box.congested{background:#451a1a}
+.hf-arrow{text-align:center;font-size:1.7rem;font-weight:900;color:var(--primary)}

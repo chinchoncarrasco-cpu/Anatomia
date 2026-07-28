@@ -11,7 +11,7 @@ themeBtn?.addEventListener("click", () => {
 
 function agregarCasosClinicos() {
   const nav = document.querySelector(".accordion-nav");
-  if (!nav || nav.querySelector('a[href="infarto-agudo-miocardio.html"]')) return;
+  if (!nav || nav.querySelector('a[href="casos-clinicos-corazon.html"]')) return;
 
   const info = [...nav.querySelectorAll("details")]
     .find(group => group.textContent.includes("Información"));
@@ -21,10 +21,14 @@ function agregarCasosClinicos() {
   bloque.innerHTML = `
     <summary>🩺 Casos clínicos del corazón</summary>
     <div class="system-links">
+      <a data-search="casos clínicos corazón patologías"
+         href="casos-clinicos-corazon.html">Resumen</a>
       <a data-search="infarto agudo de miocardio ataque cardíaco arteria coronaria"
          href="infarto-agudo-miocardio.html">Infarto agudo de miocardio</a>
-      <span class="coming-soon">Arritmias · próximamente</span>
-      <span class="coming-soon">Insuficiencia cardíaca · próximamente</span>
+      <a data-search="arritmias ritmo cardíaco taquicardia bradicardia fibrilación"
+         href="arritmias.html">Arritmias</a>
+      <a data-search="insuficiencia cardíaca falla cardiaca corazón débil congestión"
+         href="insuficiencia-cardiaca.html">Insuficiencia cardíaca</a>
     </div>`;
 
   if (info) nav.insertBefore(bloque, info);
@@ -37,9 +41,7 @@ input?.addEventListener("input", () => {
   const q = input.value.toLowerCase().trim();
 
   document.querySelectorAll(".accordion-nav details").forEach((group) => {
-    const searchable = [
-      ...group.querySelectorAll("[data-search]")
-    ];
+    const searchable = [...group.querySelectorAll("[data-search]")];
     const systemText = (group.dataset.system || "").toLowerCase();
 
     let visible = !q || systemText.includes(q);
