@@ -60,3 +60,66 @@ footer{text-align:center;color:var(--muted);padding:28px}
  .nav-buttons{align-items:stretch}
  .nav-buttons a{flex:1}
 }
+
+
+/* Casos clínicos */
+.coming-soon{
+ display:block;padding:6px 10px;color:var(--muted);font-size:.88rem;font-style:italic
+}
+.clinical-hero{border-top:5px solid #b42318}
+.emergency-box{
+ background:#fff1f0;border:2px solid #f04438;border-left:7px solid #d92d20
+}
+[data-theme="dark"] .emergency-box{background:#451a1a}
+.clinical-steps{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px
+}
+.clinical-steps div{
+ background:var(--bg);border:1px solid var(--border);border-radius:13px;padding:15px
+}
+.clinical-steps strong,.clinical-steps span{display:block}
+.clinical-steps strong{color:#b42318;margin-bottom:5px}
+.artery-diagram{max-width:720px;margin:auto}
+.artery-label{font-weight:800;margin:13px 0 5px}
+.artery{
+ position:relative;height:76px;border:10px solid #c94a4a;border-radius:40px;
+ background:#8fd3ff;overflow:hidden
+}
+.blood-flow{
+ position:absolute;inset:17px auto auto 30px;font-size:1.7rem;font-weight:800;color:#075985;
+ letter-spacing:.22em;white-space:nowrap
+}
+.artery.blocked .plaque{
+ position:absolute;right:115px;bottom:-2px;width:100px;height:48px;
+ border-radius:60px 60px 0 0;background:#f4c95d;border:5px solid #d5a72d
+}
+.artery.blocked .clot{
+ position:absolute;right:75px;top:6px;width:60px;height:54px;
+ border-radius:50%;background:#8e1b1b;border:5px solid #651010
+}
+.blood-flow.short{right:auto;left:25px}
+.no-flow{position:absolute;right:25px;top:9px;font-size:2.1rem;color:#b42318;font-weight:900}
+.case-card{
+ border-left:6px solid var(--primary);background:var(--bg);padding:18px;border-radius:12px
+}
+.compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.compare-card{background:var(--bg);border:1px solid var(--border);padding:17px;border-radius:13px}
+.sources-box{font-size:.94rem}
+.clinical-index{border-top:5px solid #b42318}
+.clinical-card{border-color:#fda29b}
+.clinical-card span{font-weight:800;color:var(--primary)}
+.muted-card{opacity:.68;cursor:default}
+.muted-card:hover{transform:none;border-color:var(--border)}
+.clinical-preview{border-left:6px solid #b42318}
+.clinical-button{
+ display:inline-block;margin-top:8px;padding:11px 16px;border-radius:10px;
+ background:#b42318;color:white;text-decoration:none;font-weight:800
+}
+.clinical-button:hover{background:#8f1b13}
+@media(max-width:600px){
+ .artery{height:65px;border-width:8px}
+ .blood-flow{font-size:1.3rem;top:15px;left:18px}
+ .artery.blocked .plaque{right:75px;width:80px}
+ .artery.blocked .clot{right:45px;width:52px}
+ .no-flow{right:12px}
+}
