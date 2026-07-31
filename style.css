@@ -13,19 +13,31 @@
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
 a{color:var(--primary)}
-.layout{display:grid;grid-template-columns:285px minmax(0,1fr);min-height:100vh}
-aside{position:sticky;top:0;height:100vh;overflow:auto;background:var(--surface);border-right:1px solid var(--border);padding:22px}
-.brand{font-size:1.25rem;font-weight:800;margin-bottom:16px}
-aside a{display:block;padding:8px 10px;border-radius:9px;text-decoration:none;color:var(--text)}
-aside a:hover,aside a.active{background:var(--bg);color:var(--primary)}
-aside strong{display:block;margin:16px 10px 5px}
-main{width:100%;max-width:1040px;margin:auto;padding:34px}
+.layout{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:100vh}
+aside{position:sticky;top:0;height:100vh;overflow:auto;background:var(--surface);border-right:1px solid var(--border);padding:20px}
+.brand{font-size:1.25rem;font-weight:800;margin-bottom:10px}
+.home-link{display:block;text-decoration:none;color:var(--text);font-weight:700;padding:8px 10px;margin-bottom:8px;border-radius:9px}
+.home-link:hover{background:var(--bg);color:var(--primary)}
+aside input{width:100%;margin-bottom:12px}
+.accordion-nav details{border-bottom:1px solid var(--border)}
+.accordion-nav summary{cursor:pointer;list-style:none;padding:11px 8px;font-weight:800;border-radius:8px}
+.accordion-nav summary::-webkit-details-marker{display:none}
+.accordion-nav summary::after{content:"＋";float:right;color:var(--muted)}
+.accordion-nav details[open] summary::after{content:"−"}
+.accordion-nav summary:hover{background:var(--bg)}
+.system-links{padding:0 0 9px 8px}
+.system-links a{display:block;padding:6px 10px;border-radius:8px;text-decoration:none;color:var(--text);font-size:.94rem}
+.system-links a:hover,.system-links a.active{background:var(--bg);color:var(--primary)}
+main{width:100%;max-width:1080px;margin:auto;padding:34px}
 .hero,section,.card{background:var(--surface);border:1px solid var(--border);border-radius:17px;box-shadow:var(--shadow)}
-.hero{padding:28px;margin-bottom:22px}
+.hero{padding:30px;margin-bottom:22px}
+.hero h1{margin-top:0;line-height:1.2}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;font-weight:800;color:var(--primary)}
 section{padding:23px;margin:19px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:15px}
-.card{padding:18px;text-decoration:none;color:var(--text);transition:.2s}
-.card:hover{transform:translateY(-3px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
+.card{padding:19px;text-decoration:none;color:var(--text);transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:var(--primary)}
+.card h3{margin-top:0}
 figure{margin:22px auto;text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:17px;padding:18px;box-shadow:var(--shadow)}
 figure img{display:block;max-width:100%;max-height:690px;margin:auto;object-fit:contain;border-radius:10px;background:#fff}
 figcaption{font-size:.9rem;color:var(--muted);margin-top:10px}
@@ -39,24 +51,116 @@ button{cursor:pointer}
 .nav-buttons a{padding:11px 16px;background:var(--primary);color:#fff;border-radius:10px;text-decoration:none;text-align:center}
 .badge{display:inline-block;background:var(--bg);border:1px solid var(--border);border-radius:999px;padding:5px 10px;margin:3px}
 footer{text-align:center;color:var(--muted);padding:28px}
+[hidden]{display:none!important}
 @media(max-width:790px){
- .layout{display:block}aside{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--border)}
- main{padding:17px}.hero{padding:21px}.nav-buttons{align-items:stretch}.nav-buttons a{flex:1}
+ .layout{display:block}
+ aside{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--border)}
+ main{padding:17px}
+ .hero{padding:21px}
+ .nav-buttons{align-items:stretch}
+ .nav-buttons a{flex:1}
 }
 
 
-/* Extensión del módulo Arterias */
+/* Casos clínicos */
+.coming-soon{
+ display:block;padding:6px 10px;color:var(--muted);font-size:.88rem;font-style:italic
+}
+.clinical-hero{border-top:5px solid #b42318}
+.emergency-box{
+ background:#fff1f0;border:2px solid #f04438;border-left:7px solid #d92d20
+}
+[data-theme="dark"] .emergency-box{background:#451a1a}
+.clinical-steps{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px
+}
+.clinical-steps div{
+ background:var(--bg);border:1px solid var(--border);border-radius:13px;padding:15px
+}
+.clinical-steps strong,.clinical-steps span{display:block}
+.clinical-steps strong{color:#b42318;margin-bottom:5px}
+.artery-diagram{max-width:720px;margin:auto}
+.artery-label{font-weight:800;margin:13px 0 5px}
+.artery{
+ position:relative;height:76px;border:10px solid #c94a4a;border-radius:40px;
+ background:#8fd3ff;overflow:hidden
+}
+.blood-flow{
+ position:absolute;inset:17px auto auto 30px;font-size:1.7rem;font-weight:800;color:#075985;
+ letter-spacing:.22em;white-space:nowrap
+}
+.artery.blocked .plaque{
+ position:absolute;right:115px;bottom:-2px;width:100px;height:48px;
+ border-radius:60px 60px 0 0;background:#f4c95d;border:5px solid #d5a72d
+}
+.artery.blocked .clot{
+ position:absolute;right:75px;top:6px;width:60px;height:54px;
+ border-radius:50%;background:#8e1b1b;border:5px solid #651010
+}
+.blood-flow.short{right:auto;left:25px}
+.no-flow{position:absolute;right:25px;top:9px;font-size:2.1rem;color:#b42318;font-weight:900}
+.case-card{
+ border-left:6px solid var(--primary);background:var(--bg);padding:18px;border-radius:12px
+}
+.compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.compare-card{background:var(--bg);border:1px solid var(--border);padding:17px;border-radius:13px}
+.sources-box{font-size:.94rem}
+.clinical-index{border-top:5px solid #b42318}
+.clinical-card{border-color:#fda29b}
+.clinical-card span{font-weight:800;color:var(--primary)}
+.muted-card{opacity:.68;cursor:default}
+.muted-card:hover{transform:none;border-color:var(--border)}
+.clinical-preview{border-left:6px solid #b42318}
+.clinical-button{
+ display:inline-block;margin-top:8px;padding:11px 16px;border-radius:10px;
+ background:#b42318;color:white;text-decoration:none;font-weight:800
+}
+.clinical-button:hover{background:#8f1b13}
+@media(max-width:600px){
+ .artery{height:65px;border-width:8px}
+ .blood-flow{font-size:1.3rem;top:15px;left:18px}
+ .artery.blocked .plaque{right:75px;width:80px}
+ .artery.blocked .clot{right:45px;width:52px}
+ .no-flow{right:12px}
+}
+
+
+/* Diagramas de ritmo cardíaco */
+.rhythm-diagram{
+ display:grid;gap:13px;background:var(--bg);border:1px solid var(--border);
+ border-radius:14px;padding:18px
+}
+.rhythm-row{
+ display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;
+ align-items:center
+}
+.rhythm-line{
+ overflow:hidden;white-space:nowrap;font-family:Consolas,monospace;
+ font-size:1.45rem;font-weight:900;color:var(--primary);
+ letter-spacing:.08em;background:var(--surface);border:1px solid var(--border);
+ border-radius:9px;padding:10px
+}
+.fast-rhythm{color:#b42318}
+.slow-rhythm{color:#075985}
+.irregular-rhythm{color:#7a2eaa}
+@media(max-width:600px){
+ .rhythm-row{grid-template-columns:1fr;gap:5px}
+ .rhythm-line{font-size:1.15rem}
+}
+
+/* Extensión estable para el módulo de arterias */
 body{overflow-x:hidden}
 .hero h1{margin:.1rem 0 .5rem;font-size:clamp(2rem,5vw,3.4rem)}
 .eyebrow{font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);font-size:.8rem}
 .lead{font-size:1.12rem;color:var(--muted);max-width:75ch}
-.badges{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}.badge{padding:.38rem .7rem;border:1px solid var(--border);border-radius:999px;background:var(--bg);font-size:.88rem}
 .toc{columns:2;column-gap:2rem}.toc a{display:block;margin:.35rem 0;text-decoration:none}
 .data-table{width:100%;border-collapse:collapse}.data-table th,.data-table td{border:1px solid var(--border);padding:.75rem;text-align:left;vertical-align:top}.data-table th{background:var(--bg)}
-.warning{background:#fff0f0;border-left:5px solid #c73737}.clinical{border-left:5px solid #b42318}.exercise{border-left:5px solid #7a3db8}.rest{border-left:5px solid #287a54}
+.warning{display:block;background:#fff0f0;color:#491313;border-left:5px solid #c73737;padding:16px;border-radius:10px}
+[data-theme="dark"] .warning{background:#431d1d;color:#ffe6e6}
+.clinical{border-left:5px solid #b42318}.exercise{border-left:5px solid #7a3db8}.rest{border-left:5px solid #287a54}
 .diagram{display:grid;gap:.75rem}.diagram .step{padding:.8rem 1rem;border-radius:12px;background:var(--bg);border:1px solid var(--border)}
-.case-card h3{margin-top:0}.case-card .tag{display:inline-block;font-size:.78rem;font-weight:700;border-radius:999px;padding:.25rem .55rem;background:var(--bg);margin-bottom:.45rem}
 .breadcrumbs{font-size:.9rem;color:var(--muted);margin-bottom:1rem}.breadcrumbs a{text-decoration:none}
 .quick-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.fact{background:var(--bg);border:1px solid var(--border);border-radius:13px;padding:14px}.fact strong{display:block;font-size:1.15rem}
 svg.anatomy{max-width:760px;width:100%;height:auto}
-@media(max-width:760px){.toc{columns:1}.layout{display:block}aside{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--border)}main{padding:20px}.nav-buttons{flex-direction:column}.nav-buttons a{text-align:center}}
+.coming-soon{display:block;padding:6px 10px;color:var(--muted);font-size:.88rem;font-style:italic}
+@media(max-width:760px){.toc{columns:1}.nav-buttons{flex-direction:column}.nav-buttons a{text-align:center}}
