@@ -416,6 +416,42 @@ function cargarNavegacion() {
 }
 
 cargarNavegacion();
+function cargarTablaContenido() {
+    const contenedor = document.getElementById("tablaContenido");
+
+    if (!contenedor) return;
+
+    const titulos = [...document.querySelectorAll("main section h2")];
+
+    if (titulos.length === 0) return;
+
+    let html = `
+        <h2>📚 Contenido</h2>
+        <ul>
+    `;
+
+    titulos.forEach((titulo, indice) => {
+        if (!titulo.id) {
+            titulo.id = `seccion-${indice + 1}`;
+        }
+
+        html += `
+            <li>
+                <a href="#${titulo.id}">
+                    ${titulo.textContent.trim()}
+                </a>
+            </li>
+        `;
+    });
+
+    html += `
+        </ul>
+    `;
+
+    contenedor.innerHTML = html;
+}
+
+cargarTablaContenido();
 
 const doc = document.documentElement;
 const savedTheme = localStorage.getItem("tema");
