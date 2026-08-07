@@ -362,7 +362,18 @@ function cargarMenu() {
             <button id="themeBtn">🌙 Cambiar tema</button>
         </div>
     `;
-}cargarMenu(); 
+    }
+function cargarFooter() {
+    const footer = document.getElementById("footer");
+
+    if (!footer) return;
+
+    footer.innerHTML = `
+        Enciclopedia de Anatomía Humana · Material educativo
+    `;
+}
+cargarMenu();
+cargarFooter(); 
 const doc = document.documentElement;
 const savedTheme = localStorage.getItem("tema");
 if (savedTheme) doc.dataset.theme = savedTheme;
