@@ -745,3 +745,35 @@ svg.anatomy {
 .toc li {
     margin: 8px 0;
 }
+.flow-layout{
+    display:flex;
+    gap:28px;
+    align-items:center;
+    margin-top:20px;
+}
+
+.flow-image{
+    flex:1;
+    margin:0;
+}
+
+.flow-image img{
+    width:100%;
+    max-width:340px;
+    display:block;
+    margin:auto;
+}
+
+.flow{
+    flex:1;
+}
+
+@media (max-width:760px){
+    .flow-layout{
+        flex-direction:column;
+    }
+
+    .flow-image img{
+        max-width:260px;
+    }
+}
