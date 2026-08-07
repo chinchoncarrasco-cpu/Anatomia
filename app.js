@@ -374,6 +374,49 @@ function cargarFooter() {
 }
 cargarMenu();
 cargarFooter(); 
+
+function cargarNavegacion() {
+    const contenedor = document.getElementById("navButtons");
+
+    if (!contenedor) return;
+
+    const enlaces = [...document.querySelectorAll(".accordion-nav .system-links a")];
+
+    const paginaActual = window.location.pathname.split("/").pop() || "index.html";
+
+    const indiceActual = enlaces.findIndex((enlace) => {
+        const href = enlace.getAttribute("href");
+        return href === paginaActual;
+    });
+
+    if (indiceActual === -1) return;
+
+    const anterior = enlaces[indiceActual - 1];
+    const siguiente = enlaces[indiceActual + 1];
+
+    let html = "";
+
+    if (anterior) {
+        html += `
+            <a href="${anterior.getAttribute("href")}">
+                ← ${anterior.textContent.trim()}
+            </a>
+        `;
+    }
+
+    if (siguiente) {
+        html += `
+            <a href="${siguiente.getAttribute("href")}">
+                ${siguiente.textContent.trim()} →
+            </a>
+        `;
+    }
+
+    contenedor.innerHTML = html;
+}
+
+cargarNavegacion();
+
 const doc = document.documentElement;
 const savedTheme = localStorage.getItem("tema");
 if (savedTheme) doc.dataset.theme = savedTheme;
